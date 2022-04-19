@@ -223,7 +223,9 @@ func (t *TerraformCloudClient) UpdateTerraformVariables(variables []*tfc.Variabl
 }
 
 func checkAndRetrieveIfSensitive(variable *tfc.Variable, secretsMountPath string, secretData map[string][]byte) error {
-	if variable.Sensitive {
+	// Try to read variables with empty value from file. If the value isn't empty,
+	// it was already read fromValue.SecretKeyRef.
+	if variable.Sensitive && variable.Value == "" {
 		// First check if the key is in the namespaced Secret
 		if val, ok := secretData[variable.Key]; ok {
 			variable.Value = string(val)
