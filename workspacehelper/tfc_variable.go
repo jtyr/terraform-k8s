@@ -82,6 +82,9 @@ func checkIfVariableChanged(specVariable *tfc.Variable, workspaceVariable *tfc.V
 	if specVariable.HCL != workspaceVariable.HCL {
 		return true
 	}
+	if specVariable.Category != workspaceVariable.Category {
+		return true
+	}
 	if !specVariable.Sensitive && workspaceVariable.Sensitive {
 		return true
 	}
