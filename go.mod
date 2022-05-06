@@ -35,6 +35,7 @@ require (
 replace (
 	github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.5.5
 	github.com/hashicorp/consul/api => github.com/hashicorp/consul/api v1.11.0
+	github.com/hashicorp/go-tfe => github.com/jtyr/go-tfe v0.21.0-1
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common => github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.277
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag => github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.277
 	k8s.io/client-go => k8s.io/client-go v0.21.4

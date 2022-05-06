@@ -215,6 +215,7 @@ func (t *TerraformCloudClient) UpdateTerraformVariables(variables []*tfc.Variabl
 			Key:       &v.Key,
 			Value:     &v.Value,
 			HCL:       &v.HCL,
+			Category:  &v.Category,
 			Sensitive: &v.Sensitive,
 		}
 		_, err := t.Client.Variables.Update(context.TODO(), v.Workspace.ID, v.ID, options)
